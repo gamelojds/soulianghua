@@ -1,0 +1,117 @@
+{
+  "_说明": "当前配置：保安 / 仓管，期望 4-7K，有经验。city 留空=用你账号所在城市（想固定就填城市代码：北京101010100 上海101020100 广州101280100 深圳101280600 杭州101210100 成都101270100 南京101190100 武汉101200100 西安101110100 郑州101180100）。",
+  "search": {
+    "queries": [
+      "保安",
+      "仓管"
+    ],
+    "city": "",
+    "params": {},
+    "maxPages": 1,
+    "maxApplyPerRun": 3,
+    "maxApplyPerDay": 20
+  },
+  "behavior": {
+    "headless": false,
+    "minDelayMs": 30000,
+    "maxDelayMs": 60000,
+    "pageDelayMs": [
+      15000,
+      25000
+    ],
+    "restEveryApplies": 3,
+    "restMs": [
+      300000,
+      600000
+    ],
+    "openDetailInNewTab": false,
+    "sendCustomGreeting": false,
+    "greeting": "您好，看到贵司在招{岗位}，我做过多年的{方向}，能马上到岗，方便聊一下具体地点和班次吗？",
+    "years": 0,
+    "direction": "安保/仓储",
+    "greetingTemplates": [
+      {
+        "match": [
+          "保安",
+          "安保",
+          "护卫",
+          "门卫",
+          "秩序"
+        ],
+        "text": "您好，看到贵司在招{岗位}。我做过多年的安保工作，站岗、巡逻、车辆及人员进出登记都熟，能吃苦、能接受倒班，随时可以到岗。想了解下具体工作地点和班次安排，方便的话聊两句？"
+      },
+      {
+        "match": [
+          "仓管",
+          "仓库",
+          "库管",
+          "理货",
+          "发货",
+          "物流",
+          "库房"
+        ],
+        "text": "您好，看到贵司在招{岗位}。我有仓库管理的实际经验，收货验货、出入库单据、库位整理、盘点对账都做过，能接受倒班和加班。想了解下作息和待遇，方便聊一下吗？"
+      },
+      {
+        "match": [],
+        "text": "您好，看到贵司在招{岗位}，我有相关经验，能马上到岗，方便聊两句吗？"
+      }
+    ],
+    "screenshotOnError": true
+  },
+  "filter": {
+    "minSalaryK": 4,
+    "maxSalaryK": 7,
+    "requireAnyKeywords": [],
+    "rejectTitleKeywords": [
+      "销售",
+      "BD",
+      "渠道",
+      "培训",
+      "讲师",
+      "兼职",
+      "众包",
+      "中介",
+      "押金",
+      "招生"
+    ],
+    "rejectJdKeywords": [
+      "押金",
+      "服装费",
+      "报名费",
+      "中介费",
+      "培训费",
+      "体检费自理",
+      "先交费",
+      "贷款",
+      "分期",
+      "大小周",
+      "单休",
+      "做六休一",
+      "996",
+      "无加班费",
+      "加班无补偿"
+    ],
+    "skipIfAlreadyChat": true
+  },
+  "autoReply": {
+    "_说明": "只回普通询问（简历/方便/在吗这类），遇到约面与不合适一律不自动回，只提醒。",
+    "enabled": true,
+    "maxPerRun": 5,
+    "replyEvenIfRead": false,
+    "text": "在的，方便的话我把简历发您；也想先了解下工作地点、班次和薪资怎么算，谢谢！"
+  },
+  "notify": {
+    "_说明": "type 可选：wecom（企业微信群机器人，填 webhook）/ telegram（botToken + chatId）/ serverchan（sendKey）。留空只在控制台打印。",
+    "type": "",
+    "webhook": "",
+    "botToken": "",
+    "chatId": "",
+    "sendKey": ""
+  },
+  "paths": {
+    "profile": "profile",
+    "data": "data",
+    "screenshots": "data/screenshots"
+  }
+}
