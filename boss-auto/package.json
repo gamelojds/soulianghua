@@ -1,0 +1,36 @@
+{
+  "name": "boss-auto-apply",
+  "version": "1.0.0",
+  "private": false,
+  "type": "module",
+  "description": "BOSS直聘 自动投递助手：按条件筛选岗位、跳过黑名单公司、逐个发起沟通，含 JD 反筛、投后跟踪、面试提醒、黑名单学习、桌面控制台与定时任务。",
+  "keywords": ["boss直聘", "zhipin", "job-search", "automation", "playwright", "cdp"],
+  "license": "MIT",
+  "author": "gamelojds",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gamelojds/soulianghua.git"
+  },
+  "homepage": "https://github.com/gamelojds/soulianghua#readme",
+  "scripts": {
+    "ui": "node ui/server.mjs",
+    "shortcut": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/create-shortcut.ps1",
+    "login": "node src/login.mjs",
+    "open": "node src/open.mjs",
+    "dry": "node src/apply.mjs --dry-run",
+    "run": "node src/apply.mjs",
+    "track": "node src/track.mjs",
+    "track:dry": "node src/track.mjs --dry-run",
+    "learn": "node src/learn.mjs",
+    "learn:apply": "node src/learn.mjs --apply",
+    "report": "node src/report.mjs",
+    "schedule": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/schedule-task.ps1 -Action install",
+    "unschedule": "powershell -NoProfile -ExecutionPolicy Bypass -File tools/schedule-task.ps1 -Action remove"
+  },
+  "dependencies": {
+    "playwright-core": "^1.48.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
