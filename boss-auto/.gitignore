@@ -1,0 +1,9 @@
+node_modules/
+profile/
+.ui-profile/
+data/
+dist/
+*.log
+*.png
+!docs/**/*.png
+.env
